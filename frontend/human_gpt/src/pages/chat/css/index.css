@@ -1,0 +1,10 @@
+#root-chat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body {
+    background-color: #212121;
+    font-family: "Nunito", sans-serif;
+}

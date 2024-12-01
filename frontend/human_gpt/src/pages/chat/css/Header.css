@@ -1,0 +1,44 @@
+#chat-models {
+    position: absolute;
+    background-color: #676767;
+    color: white;
+}
+
+#chat-dropdown p {
+    color: #b4b4b4;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: bolder;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+#chat-dropdown p:hover {
+    cursor: pointer;
+    background-color: #424242;
+}
+
+#chat-models ul {
+    list-style: none;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    gap: 15px;
+}
+
+.model-list {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.model-list-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.model-list-name > :last-child {
+    font-size: smaller;
+}
+
