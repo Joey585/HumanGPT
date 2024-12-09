@@ -30,11 +30,24 @@ export default function Chat(){
                 break
             }
             if(value){
-                const chunk = new TextDecoder().decode(value)
+                let chunks = []
+                const chunk = new TextDecoder().decode(value);
                 console.log(chunk)
-                const JSONData = JSON.parse(chunk.replace("data: ", ""))
-                if(JSONData.event === 2 ){
-                    appendToMessage(JSONData.data)
+                if(chunk.includes("\n\ndata:")){
+                    console.log("Has multiple datas")
+                    const chunks = chunk.split("\n\n");
+                    for (const dataChunk of chunks) {
+                        chunks.push(dataChunk);
+                    }
+                } else {
+                    chunks.push(chunk);
+                }
+
+                for (let dataChunk of chunks) {
+                    const JSONData = JSON.parse(dataChunk.replace("data: ", ""))
+                    if(JSONData.event === 2 ){
+                        appendToMessage(JSONData.data)
+                    }
                 }
             }
         }
