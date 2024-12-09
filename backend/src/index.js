@@ -45,7 +45,7 @@ app.post("/message", (req, res) => {
         if(data === "[END]"){
             return res.end();
         }
-        sendEvent({event: 2, data})
+        sendEvent({event: 2, data: data.trim()});
     });
 
 
