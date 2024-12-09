@@ -31,6 +31,7 @@ export default function Chat(){
             }
             if(value){
                 const chunk = new TextDecoder().decode(value)
+                console.log(chunk)
                 const JSONData = JSON.parse(chunk.replace("data: ", ""))
                 if(JSONData.event === 2 ){
                     appendToMessage(JSONData.data)
