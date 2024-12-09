@@ -13,7 +13,13 @@ app.use((req, res, next) => {
 });
 
 app.use(cors({
-    origin: 'http://localhost:5003', // Allow only this origin
+    origin: (origin, callback) => {
+        if (!origin || config.allowedURLs.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    }
 }));
 
 app.post("/message", (req, res) => {
