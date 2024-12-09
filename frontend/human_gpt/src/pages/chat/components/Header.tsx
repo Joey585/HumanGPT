@@ -3,11 +3,11 @@ import Image from "next/image";
 import "../css/Header.css"
 
 export const Header = ({activeDropdown}: {activeDropdown: boolean}) => {
-    const [models, setModels] = useState<Array<{name: string, id: number, desc: string}>>([
+    const [models] = useState<Array<{name: string, id: number, desc: string}>>([
         {name: "HumanGPT 1a", id: 1, desc: "First model, not very smart"},
         {name: "HumanGPT 1b", id: 2, desc: "Bug fixes, more parameters"}
     ])
-    const [selectedModel, setSelected] = useState<number>(1);
+    const [selectedModel] = useState<number>(1);
     const [isOpen, setOpen] = useState<boolean>(activeDropdown);
 
     const clickedModel = () => {setOpen(!isOpen)}

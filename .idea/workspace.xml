@@ -5,29 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba6649f3-a644-449a-af4c-cb9b50308cf3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/HumanGPT.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/human_gpt/src/pages/home.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/human_gpt/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/human_gpt.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.idea/backend.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.idea/discord.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/human_gpt/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/human_gpt/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/human_gpt/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/human_gpt/src/app/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/human_gpt/src/pages/chat/components/Output.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/human_gpt/src/pages/chat/components/Output.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/human_gpt/src/pages/chat/css/Output.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/human_gpt/src/pages/chat/css/Output.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/human_gpt/src/pages/chat/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/human_gpt/src/pages/chat/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +79,7 @@
       <updated>1733209048854</updated>
       <workItem from="1733209049875" duration="3667000" />
       <workItem from="1733285119074" duration="6000" />
-      <workItem from="1733704439511" duration="1276000" />
+      <workItem from="1733704439511" duration="2485000" />
     </task>
     <servers />
   </component>

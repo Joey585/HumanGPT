@@ -18,7 +18,7 @@ export const Output = ({conversation}: {conversation: Array<Message>}) => {
     return(
         <div id="conversation-output" ref={outputRef}>
             {conversation.map((message, index) => (
-                <span className={"message-" + message.author}>{message.content}</span>
+                <span className={"message-" + message.author} key={index}>{message.content}</span>
             ))}
         </div>
     )
