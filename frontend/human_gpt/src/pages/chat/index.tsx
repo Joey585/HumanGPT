@@ -14,7 +14,7 @@ export default function Chat(){
         const AIResponse = await fetch(config.backendLink, {
             method: "POST",
             headers: {"Content-Type": 'application/json'},
-            body: JSON.stringify({conversation: conversation.slice(0,-1).map((message) => `user${message.author}: ${message.content}`).join("\n")})
+            body: JSON.stringify({conversation: conversation.slice(0,-1).map((message) => `user${message.author}: ${message.content.trim()}`).join("\n")})
         });
 
         if(!AIResponse.body) {

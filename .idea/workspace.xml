@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba6649f3-a644-449a-af4c-cb9b50308cf3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/human_gpt/src/components/Output.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/human_gpt/src/components/Output.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/human_gpt/src/components/css/Output.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/human_gpt/src/components/css/Output.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/human_gpt/src/pages/chat/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/human_gpt/src/pages/chat/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +86,7 @@
       <updated>1733209048854</updated>
       <workItem from="1733209049875" duration="3667000" />
       <workItem from="1733285119074" duration="6000" />
-      <workItem from="1733704439511" duration="9363000" />
+      <workItem from="1733704439511" duration="10067000" />
     </task>
     <servers />
   </component>
