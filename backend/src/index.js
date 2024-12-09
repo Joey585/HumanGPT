@@ -6,6 +6,12 @@ const cors = require('cors');
 
 app.use(express.json());
 
+app.use((req, res, next) => {
+    const clientIp = req.ip || req.connection.remoteAddress;
+    console.log(`Endpoint accessed: ${req.method} ${req.url} | IP: ${clientIp}`);
+    next();
+});
+
 app.use(cors({
     origin: 'http://localhost:3000', // Allow only this origin
 }));
@@ -16,8 +22,6 @@ app.post("/message", (req, res) => {
     res.header("Connection", "keep-alive");
 
     if(!req.body) return res.status(400).json({error: "No conversation provided", code: 400});
-
-    console.log(req.body)
 
     const sendEvent = (data) => {
         res.write(`data: ${JSON.stringify(data)}\n\n`);
