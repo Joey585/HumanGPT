@@ -20,7 +20,7 @@ export const Output = ({conversation}: {conversation: Array<Message>}) => {
         <div id="conversation-output" ref={outputRef}>
             {conversation.map((message, index) => (
                 <div key={index} className={"message-" + message.author}>
-                    <span>{message.content}</span>
+                    {message.content}
                     {message.active && (
                         <div className="loading-circle"></div>
                     )}
