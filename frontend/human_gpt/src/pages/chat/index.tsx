@@ -30,7 +30,7 @@ export default function Chat(){
                 break
             }
             if(value){
-                let chunks = []
+                const chunks = []
                 const chunk = new TextDecoder().decode(value);
                 console.log(chunk)
                 if(chunk.includes("\n\ndata:")){
@@ -43,7 +43,7 @@ export default function Chat(){
                     chunks.push(chunk);
                 }
 
-                for (let dataChunk of chunks) {
+                for (const dataChunk of chunks) {
                     const JSONData = JSON.parse(dataChunk.replace("data: ", ""))
                     if(JSONData.event === 2 ){
                         appendToMessage(JSONData.data)
