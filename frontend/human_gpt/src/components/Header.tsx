@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Image from "next/image";
-import "../css/Header.css"
+import "@/components/css/Header.css"
 
 export const Header = ({activeDropdown}: {activeDropdown: boolean}) => {
     const [models] = useState<Array<{name: string, id: number, desc: string}>>([

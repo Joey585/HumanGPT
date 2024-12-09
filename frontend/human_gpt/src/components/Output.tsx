@@ -1,4 +1,4 @@
-import "../css/Output.css"
+import "@/components/css/Output.css"
 import {useEffect, useRef} from "react";
 
 export interface Message {

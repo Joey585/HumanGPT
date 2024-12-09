@@ -1,5 +1,5 @@
 import React, {ChangeEvent, useState} from "react";
-import "../css/ChatBox.css"
+import "@/components/css/ChatBox.css"
 
 export const ChatBox = ({ messageCallback }: { messageCallback: (message: string) => void }) => {
     const [messageSent, editMessage] = useState<string>("");

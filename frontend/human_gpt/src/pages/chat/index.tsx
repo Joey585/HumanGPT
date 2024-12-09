@@ -1,9 +1,9 @@
-import {ChatBox} from "@/pages/chat/components/ChatBox";
-import {Message, Output} from "@/pages/chat/components/Output";
+import {ChatBox} from "@/components/ChatBox";
+import {Message, Output} from "@/components/Output";
 import {useState} from "react";
-import "./css/index.css"
+import "@/components/css/index.css"
 import Head from "next/head";
-import {Header} from "@/pages/chat/components/Header";
+import {Header} from "@/components/Header";
 import config from "../../../config.json"
 
 export default function Chat(){
