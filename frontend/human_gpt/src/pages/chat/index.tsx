@@ -38,7 +38,7 @@ export default function Chat(){
                     try {
                         const data = JSON.parse(entry);
                         if(data.event === 2){
-                            appendToMessage(data.data.replaceAll("\n", ""))
+                            appendToMessage(data.data.replaceAll("\n", "").replaceAll("�", ""));
                         }
                     } catch (e) {
                         console.error(e)
