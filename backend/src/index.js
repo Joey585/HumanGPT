@@ -13,7 +13,7 @@ app.use((req, res, next) => {
 });
 
 app.use(cors({
-    origin: 'http://localhost:3000', // Allow only this origin
+    origin: 'http://localhost:5003', // Allow only this origin
 }));
 
 app.post("/message", (req, res) => {
