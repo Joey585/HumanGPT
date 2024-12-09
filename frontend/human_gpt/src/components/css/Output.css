@@ -33,7 +33,15 @@
 .message-2 {
     color: white;
     text-align: left;
-    display: inline-block;
+    display: flex;
+    gap: 5px;
     width: auto;
     align-self: flex-start;
+}
+
+.loading-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
 }

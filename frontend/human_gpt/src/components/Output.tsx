@@ -3,7 +3,8 @@ import {useEffect, useRef} from "react";
 
 export interface Message {
     author: number,
-    content: string
+    content: string,
+    active?: boolean
 }
 
 export const Output = ({conversation}: {conversation: Array<Message>}) => {
@@ -18,7 +19,12 @@ export const Output = ({conversation}: {conversation: Array<Message>}) => {
     return(
         <div id="conversation-output" ref={outputRef}>
             {conversation.map((message, index) => (
-                <span className={"message-" + message.author} key={index}>{message.content}</span>
+                <div key={index} className={"message-" + message.author}>
+                    <span>{message.content}</span>
+                    {message.active && (
+                        <div className="loading-circle"></div>
+                    )}
+                </div>
             ))}
         </div>
     )

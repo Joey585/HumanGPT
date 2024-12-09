@@ -25,7 +25,10 @@ export default function Chat(){
         const reader = AIResponse.body.getReader()
         while (true) {
             const {value, done} = await reader.read()
-            if (done) break;
+            if (done) {
+                finishMessageStream()
+                break
+            }
             if(value){
                 const chunk = new TextDecoder().decode(value)
                 const JSONData = JSON.parse(chunk.replace("data: ", ""))
@@ -47,8 +50,24 @@ export default function Chat(){
 
             const lastMessage = {...updatedConversation[updatedConversation.length -1]};
             lastMessage.content = content.replace("\n", "");
+            lastMessage.active = true;
             updatedConversation[updatedConversation.length -1] = lastMessage;
 
+            return updatedConversation;
+        })
+    }
+
+    const finishMessageStream = () => {
+        setConversation((prevConversation) => {
+            if(prevConversation.length === 0) {
+                console.error("No conversations");
+                return prevConversation;
+            }
+
+            const updatedConversation = [...prevConversation];
+            const lastMessage = {...updatedConversation[updatedConversation.length -1]};
+            lastMessage.active = false;
+            updatedConversation[updatedConversation.length -1] = lastMessage;
             return updatedConversation;
         })
     }
@@ -58,7 +77,7 @@ export default function Chat(){
             const updatedConversation = [
                 ...prevConversation,
                 { content: message, author: 1 },
-                {content: "", author: 2}
+                {content: "", author: 2, active: true}
             ];
             getResponse(updatedConversation);
             return updatedConversation;
