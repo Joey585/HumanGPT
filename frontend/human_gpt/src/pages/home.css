@@ -1,0 +1,39 @@
+#description {
+    display: flex;
+    flex-direction: column;
+    border: #383838 dashed 1px;
+    align-items: center;
+    padding: 16px;
+    color: white;
+}
+
+body {
+    background-color: #212121;
+    font-family: "Nunito", sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+#main-home {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+button {
+    margin-top: 20px;
+    background-color: var(--foreground);
+    border: 1px solid #424242;
+    padding: 16px;
+    color: white;
+    border-radius: 12px;
+}
+
+button:hover {
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+    background-color: #676767;
+}

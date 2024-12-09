@@ -1,9 +1,13 @@
+import os
+
 import tensorflow as tf
 from flask import Flask, jsonify
 from transformers import AutoTokenizer, TFAutoModelForCausalLM
-from data_process import process_text
 from flask_socketio import SocketIO, send
+from dotenv import load_dotenv
+from pyngrok import ngrok
 
+load_dotenv()
 app = Flask(__name__)
 socketio = SocketIO(app)
 
@@ -11,13 +15,11 @@ model_name = "joeylieb/human-discord-gpt2"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = TFAutoModelForCausalLM.from_pretrained(model_name)
 
+ngrok.set_auth_token(os.getenv("NGROK_TOKEN"))
 
 @socketio.on("message")
 def generate(message):
-    raw_data = message.get_json(silent=True)
-    if raw_data is None:
-        return send(jsonify({"error": "Invalid JSON", "status": 400}))
-    conversation = "\n".join(process_text(raw_data["conversation"])) + "\nuser2:"
+    conversation = message + "\nuser2:"
     input_ids = tokenizer.encode(conversation, return_tensors="tf")
     output_ids = tf.identity(input_ids)
     max_length = len(conversation) + 50
@@ -55,12 +57,13 @@ def generate(message):
         generated_response += new_token
 
         send(generated_response)
+        print(generated_response)
 
         if next_token_id[0, 0].numpy() == tokenizer.eos_token_id or next_token_id[0, 0].numpy() == \
                 tokenizer.encode('\nuser')[0]:
+            send("[END]")
             break
 
-        send("[END]")
 
 
 if __name__ == "__main__":

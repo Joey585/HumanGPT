@@ -4,13 +4,14 @@ import {useState} from "react";
 import "./css/index.css"
 import Head from "next/head";
 import {Header} from "@/pages/chat/components/Header";
+import config from "../../../config.json"
 
 export default function Chat(){
     const [currentConversation, setConversation] = useState<Array<Message>>([]);
     const [dropdownActive, setDropdown] = useState<boolean>(false);
 
     const getResponse = async (conversation: Array<Message>) => {
-        const AIResponse = await fetch("http://localhost:5001/message", {
+        const AIResponse = await fetch(config.backendLink, {
             method: "POST",
             headers: {"Content-Type": 'application/json'},
             body: JSON.stringify({conversation: conversation.slice(0,-1).map((message) => `user${message.author}: ${message.content}`).join("\n")})
@@ -35,7 +36,7 @@ export default function Chat(){
         }
     }
 
-    const appendToMessage = (content) => {
+    const appendToMessage = (content: string) => {
         setConversation((prevConversation) => {
             if(prevConversation.length === 0) {
                 console.error("No conversations");
@@ -52,7 +53,7 @@ export default function Chat(){
         })
     }
 
-    const onChat = (message) => {
+    const onChat = (message: string) => {
         setConversation((prevConversation) => {
             const updatedConversation = [
                 ...prevConversation,
@@ -73,7 +74,7 @@ export default function Chat(){
         <div id="root-chat" onClick={onBodyClick}>
             <Head>
                 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
+                <link rel="preconnect" href="https://fonts.gstatic.com"/>
                 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"/>
                 <title>HumanGPT</title>
             </Head>
