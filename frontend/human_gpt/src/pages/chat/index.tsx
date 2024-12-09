@@ -30,25 +30,20 @@ export default function Chat(){
                 break
             }
             if(value){
-                const chunks = []
                 const chunk = new TextDecoder().decode(value);
-                console.log(chunk)
-                if(chunk.includes("\n\ndata:")){
-                    console.log("Has multiple datas")
-                    const chunks = chunk.split("\n\n");
-                    for (const dataChunk of chunks) {
-                        chunks.push(dataChunk);
-                    }
-                } else {
-                    chunks.push(chunk);
-                }
+                const chunks = chunk.split("data:").filter(entry => entry.trim() !== "");
+                console.log(chunks)
 
-                for (const dataChunk of chunks) {
-                    const JSONData = JSON.parse(dataChunk.replace("data: ", ""))
-                    if(JSONData.event === 2 ){
-                        appendToMessage(JSONData.data)
+                chunks.forEach(entry => {
+                    try {
+                        const data = JSON.parse(entry);
+                        if(data.event === 2){
+                            appendToMessage(data.data.replaceAll("\n", ""))
+                        }
+                    } catch (e) {
+                        console.error(e)
                     }
-                }
+                });
             }
         }
     }
